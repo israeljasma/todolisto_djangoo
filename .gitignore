@@ -4,3 +4,5 @@ todolisto/__pycache__/
 main/__pycache__/
 
 *.pyc
+
+*.sqlite3
