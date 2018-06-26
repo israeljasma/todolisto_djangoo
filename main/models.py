@@ -4,18 +4,6 @@ from datetime import date
 
 # Create your models here.
 
-class Tarea (models.Model):
-    titulo = models.CharField(max_length = 255)
-    descripcion = models.CharField(max_length = 255)
-    usuario = models.ForeignKey(User, on_delete = models.CASCADE)
-    tipo = models.ForeignKey(TipoTarea, on_delete = models.DO_NOTHING)
-    estado = models.ForeignKey(EstadoTarea, on_delete = models.DO_NOTHING)
-    fechaInicio = models.DateField(default=date.today)
-    fechaTermino = models.DateField(default=date.today)
-
-    def __str__(self):
-        return self.titulo
-
 class TipoTarea (models.Model):
     nombre = models.CharField(max_length = 255)
 
@@ -27,3 +15,15 @@ class EstadoTarea (models.Model):
 
     def __str__(self):
 	    return '{}'.format(self.nombre)
+
+class Tarea (models.Model):
+    titulo = models.CharField(max_length = 255)
+    descripcion = models.CharField(max_length = 255)
+    usuario = models.ForeignKey(User, on_delete = models.CASCADE)
+    tipo = models.ForeignKey(TipoTarea, on_delete = models.DO_NOTHING)
+    estado = models.ForeignKey(EstadoTarea, on_delete = models.DO_NOTHING)
+    fechaInicio = models.DateField(default=date.today)
+    fechaTermino = models.DateField(default=date.today)
+
+    def __str__(self):
+        return self.titulo
