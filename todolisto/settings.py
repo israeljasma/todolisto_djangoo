@@ -29,6 +29,11 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+LOGIN_URL ='/todolisto/login'
+LOGIN_REDIRECT_URL = '/todolisto/home'
+
+LOGOUT_URL ='/todolisto/logut'
+LOGOUT_REDIRECT_URL = '/todolisto/login'
 
 INSTALLED_APPS = [
     'main',
